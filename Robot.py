@@ -132,13 +132,13 @@ class Robot:
             self.driver.get(target_url)
             update_record(asin, key_words, 'pv', number=1)
             time.sleep(10)
-            """
+            
             if random.random()< possibility:
                 self.add_to_cart()
                 time.sleep(5)
                 update_record(asin, key_words, 'cart', number=1)
                 print '========successfully add item to cart======'
-            """
+            
             # add to wish list
             wish_list = '#add-to-wishlist-button-submit'
             self.driver.find_element_by_css_selector(wish_list).click()
