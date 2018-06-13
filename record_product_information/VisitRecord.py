@@ -16,11 +16,11 @@ import MySQLdb
 from GetProductRank import get_product_page
 
 #infomation about mysql server
-HOST = 'XXXX'
+HOST = '43.254.217.147'
 PORT = 3306
-USER = 'amazon'
-PASSWD = 'xxxxxx'
-DB = 'amazon'
+USER = 'root'
+PASSWD = 'Passw0rd'
+DB = 'YXiu'
 CHARSET = 'utf8'
 
 

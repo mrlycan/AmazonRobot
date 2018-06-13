@@ -19,7 +19,7 @@
 import redis
 
 
-def get_connection(HOST = 'XXXX', PORT = 6379, PASSWORD = 'XXXX', DB = 0):
+def get_connection(HOST = '43.254.217.147', PORT = 6379, PASSWORD = 'Passw0rd', DB = 0):
     """get a connection to redis
     
     Args:
