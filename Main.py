@@ -16,32 +16,37 @@ if __name__ == '__main__':
     search_words = 'diaper bag'
     add_to_cart_probability = 0.7
     while True:
-        proxy = get_valid_proxy('https://www.amazon.com', 'china_ips')
-        robot = Robot(proxy)
-        ###############################################
-        # sign in and browse
-        ###############################################
-        """
-        robot.sign_in()
-        # one item
-        robot.search_keywords(search_words)
-        robot.simulate_browsing(search_words, asin, add_to_cart_probability)
-        # another item
-        # ....
-        """
-        ###############################################
-        # sign up
-        ############################################### 
-        #normal sign up
-        """
-        user_info = robot.generate_sign_up_user(random_password=True)
-        robot.sign_up(user_info)
-        """
-    
-        # sign up
-        user_info = robot.generate_sign_up_user(random_password=True)
-        robot.sign_up(user_info)
-        time.sleep(5)
-        #robot.search_keywords(search_words)
-        robot.simulate_browsing(search_words, asin, add_to_cart_probability)
-        robot.exit_driver()
+        try:
+            proxy = get_valid_proxy('https://www.amazon.com', 'china_ips')
+            robot = Robot(proxy)
+            ###############################################
+            # sign in and browse
+            ###############################################
+            """
+            robot.sign_in()
+            # one item
+            robot.search_keywords(search_words)
+            robot.simulate_browsing(search_words, asin, add_to_cart_probability)
+            # another item
+            # ....
+            """
+            ###############################################
+            # sign up
+            ############################################### 
+            #normal sign up
+            """
+            user_info = robot.generate_sign_up_user(random_password=True)
+            robot.sign_up(user_info)
+            """
+        
+            # sign up
+            user_info = robot.generate_sign_up_user(random_password=True)
+            robot.sign_up(user_info)
+            time.sleep(5)
+            #robot.search_keywords(search_words)
+            robot.simulate_browsing(search_words, asin, add_to_cart_probability)
+            robot.exit_driver()
+        except Exception, e:
+            print 'Error while exiting the web driver\n%s'%e.message 
+            robot.exit_driver()
+            continue
