@@ -141,7 +141,9 @@ class Robot:
             
             # add to wish list
             wish_list = '#add-to-wishlist-button-submit'
+            time.sleep(15)
             self.driver.find_element_by_css_selector(wish_list).click()
+            update_record(asin, key_words, 'wish_list', number=1)
             time.sleep(15)
             # alert = self.driver.switch_to_alert() # NoAlertPresentException
             
