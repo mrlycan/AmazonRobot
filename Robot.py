@@ -73,7 +73,7 @@ class Robot:
                 inputElement.send_keys(v)
                 time.sleep(5)
             inputElement.submit()
-            user_info = sign_up_form['email']+'#'+sign_up_form['password']+'#'+mac
+            user_info = sign_up_form['email']+'#'+sign_up_form['password']+'#'
             self.store_registered_user(user_info)
         except Exception, e:
             print 'Error while signing up\n%s'%e.message
