@@ -50,7 +50,7 @@ class Robot:
         # set user_agent
         useragent=generate_user_agent()
         profile.set_preference("general.useragent.override", useragent)
-        print useragent
+        print 'user_agent:%s'%useragent
         profile.update_preferences()
         self.driver = webdriver.Firefox(firefox_profile=profile)
         

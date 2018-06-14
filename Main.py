@@ -11,9 +11,9 @@ from get_proxy_and_user_information.GetProxy import get_valid_proxy
 
 if __name__ == '__main__':
     # provide the informaion of the product on Amazon, including asin and words for searching
-    asin = 'B07BF5MTBS'
+    asin = 'B07BF962T6'
     #asin = 'B002NSMFOQ'
-    search_words = 'Leather wallet for women'
+    search_words = 'Leather Women Wallets'
     add_to_cart_probability = 0.7
     while True:
         try:
