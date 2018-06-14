@@ -46,9 +46,9 @@ if __name__ == '__main__':
             #robot.search_keywords(search_words)
             robot.simulate_browsing(search_words, asin, add_to_cart_probability)
             robot.exit_driver()
-            time.sleep(30)
+            time.sleep(60*3)
         except Exception, e:
             print 'Error while exiting the web driver\n%s'%e.message 
             robot.exit_driver()
-            time.sleep(30)
+            time.sleep(60*3)
             continue
