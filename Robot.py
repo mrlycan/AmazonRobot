@@ -187,7 +187,8 @@ class Robot:
         email='#a-icon a-icon-share-email'
         try:
             print '================start share_email==================='
-            self.driver.find_element_by_css_selector(email)[0].click()
+            share= self.driver.find_element_by_css_selector(email)
+            print share
             inputElement= self.driver.find_element_by_name('ac_input')
             user_infos = self.generate_sign_up_user(random_password=True)
             emails=user_infos['email']
