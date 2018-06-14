@@ -169,6 +169,11 @@ class Robot:
             inputElement = self.driver.find_element_by_name('field-keywords')
             inputElement.send_keys(words)
             inputElement.submit()
+            time.sleep(random.randint(5,10))
+            targetElem = self.driver.find_element_by_xpath("//a[@id='pagnNextLink']/span[@id='pagnNextString']")
+            self.driver.execute_script("arguments[0].scrollIntoView();", targetElem)
+            self.driver.find_element_by_id('pagnNextString').click()
+            time.sleep(12)
         except Exception, e:
             print 'Error while searching keywords\n%s'%e.message
             self.exit_driver()
