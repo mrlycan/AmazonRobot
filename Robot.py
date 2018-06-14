@@ -133,19 +133,22 @@ class Robot:
             update_record(asin, key_words, 'pv', number=1)
             time.sleep(10)
             
-            # if random.random()< possibility:
-            #     self.add_to_cart()
-            #     time.sleep(5)
-            #     update_record(asin, key_words, 'cart', number=1)
-            #     print '========successfully add item to cart======'
-            
-            # add to wish list
-            # wish_list = '#add-to-wishlist-button-submit'
-            # time.sleep(15)
-            # self.driver.find_element_by_css_selector(wish_list).click()
-            self.share_email()
-            update_record(asin, key_words, 'wish_list', number=1)
-            time.sleep(15)
+            if random.random()< possibility:
+                self.add_to_cart()
+                time.sleep(5)
+                update_record(asin, key_words, 'cart', number=1)
+                print '========successfully add item to cart======'
+            else:
+                # add to wish list
+                # wish_list = '#add-to-wishlist-button-submit'
+                wish_list='add-to-wishlist-button-submit'
+                # time.sleep(15)
+                self.driver.find_element_by_id(wish_list).click()
+                update_record(asin, key_words, 'wish_list', number=1)
+                time.sleep(15)
+
+            #self.share_email()
+           
             # alert = self.driver.switch_to_alert() # NoAlertPresentException
             
         except ValueError, e:
@@ -173,9 +176,9 @@ class Robot:
 
     def add_to_cart(self):
         """add item to cart"""
-        cart = '#add-to-cart-button'
+        cart = 'add-to-cart-button'
         try:
-            self.driver.find_element_by_css_selector(cart).click()
+            self.driver.find_element_by_id(cart).click()
             print '================successfully add to cart==================='
             time.sleep(5)
         except Exception,e:
