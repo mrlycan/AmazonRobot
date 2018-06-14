@@ -181,6 +181,24 @@ class Robot:
             print 'Error while adding item to cart\n%s'%e.message
             self.exit_driver()
             sys.exit(0)
+    
+    def share_email(self):
+        email='#a-icon a-icon-share-email'
+        try:
+            print '================start share_email==================='
+            self.driver.find_element_by_css_selector(email).click()
+            inputElement= self.driver.find_element_by_name('ac_input')
+            user_infos = self.generate_sign_up_user(random_password=True)
+            emails=user_infos['email']
+            print emails
+            inputElement.send_keys(emails)
+            self.driver.find_element_by_name('swfSubmitButton-announce').click()
+            print '================end share_email==================='
+        except Exception,e:
+            print 'Error while adding item to share_email\n%s'%e.message
+            self.exit_driver()
+            sys.exit(0) 
+
         
 
     def generate_sign_up_user(self, random_password = False):
