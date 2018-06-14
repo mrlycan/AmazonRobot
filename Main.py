@@ -6,7 +6,9 @@
 # @Email: liangchaowu5@gmail.com
 
 import time 
+import random
 from Robot import Robot
+
 from get_proxy_and_user_information.GetProxy import get_valid_proxy 
 
 if __name__ == '__main__':
@@ -46,9 +48,13 @@ if __name__ == '__main__':
             #robot.search_keywords(search_words)
             robot.simulate_browsing(search_words, asin, add_to_cart_probability)
             robot.exit_driver()
-            time.sleep(60*3)
+            doc=random.randint(1, 12)
+            print 'The system will take a break for %s minutes'%doc
+            time.sleep(60*doc)
         except Exception, e:
             print 'Error while exiting the web driver\n%s'%e.message 
             robot.exit_driver()
-            time.sleep(60*3)
+            doc=random.randint(1, 12)
+            print 'The system will take a break for %s minutes'%doc
+            time.sleep(60*doc)
             continue
