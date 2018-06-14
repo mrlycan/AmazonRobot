@@ -189,6 +189,7 @@ class Robot:
             print '================start share_email==================='
             share= self.driver.find_element_by_id('swfImage').click()
             print share
+            time.sleep(5)
             inputElement= self.driver.find_element_by_id('ac_input')
             user_infos = self.generate_sign_up_user(random_password=True)
             emails=user_infos['email']
