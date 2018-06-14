@@ -48,8 +48,9 @@ class Robot:
         profile.set_preference("network.proxy.http", ip)
         profile.set_preference("network.proxy.http_port", port)
         # set user_agent
-        profile.set_preference("general.useragent.override", generate_user_agent())
-
+        useragent=generate_user_agent()
+        profile.set_preference("general.useragent.override", useragent)
+        print useragent
         profile.update_preferences()
         self.driver = webdriver.Firefox(firefox_profile=profile)
         
