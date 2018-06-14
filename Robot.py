@@ -184,7 +184,7 @@ class Robot:
             sys.exit(0)
     
     def share_email(self):
-        email='#a-icon a-icon-share-email'
+        email='#a-link-normal email'
         try:
             print '================start share_email==================='
             self.driver.find_element_by_css_selector(email).click()
@@ -196,7 +196,7 @@ class Robot:
             self.driver.find_element_by_name('swfSubmitButton-announce').click()
             print '================end share_email==================='
         except Exception,e:
-            print 'Error while adding item to share_email\n%s'%e.message
+            print 'Error while adding item to share_email\n%s'%e
             self.exit_driver()
             sys.exit(0) 
 
