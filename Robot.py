@@ -152,7 +152,7 @@ class Robot:
             # alert = self.driver.switch_to_alert() # NoAlertPresentException
             
         except ValueError, e:
-            print 'Error while visiting %s\n%s'%(target_url, e.message)
+            print 'Error while visiting %s\n%s'%(target_url, e)
             #self.exit_driver()
             sys.exit(0)
 
